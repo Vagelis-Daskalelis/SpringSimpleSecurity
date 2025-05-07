@@ -8,11 +8,15 @@ import com.tasks.organizer.entities.User;
 import com.tasks.organizer.repository.UserRepository;
 import com.tasks.organizer.service.AuthenticationService;
 import com.tasks.organizer.service.JwtService;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -41,5 +45,23 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
         var jwt = jwtService.generateToken(user);
         return JwtAuthenticationResponse.builder().token(jwt).build();
+    }
+
+
+    @PostConstruct
+    public void createAnAdminAccount(){
+        Optional<User> adminAccount = userRepository.findByRole(Role.ADMIN);
+        if (adminAccount.isEmpty()){
+            User user = new User();
+            user.setEmail("admin@test.com");
+            user.setFirstName("admin");
+            user.setLastName("admin");
+            user.setRole(Role.ADMIN);
+            user.setPassword(passwordEncoder.encode("admin"));
+            userRepository.save(user);
+            System.out.println("Admin created successfully");
+        }else {
+            System.out.println("Admin already exists");
+        }
     }
 }
