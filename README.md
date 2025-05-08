@@ -22,4 +22,4 @@ bash
 git clone https://github.com/Vagelis-Daskalelis/SpringSimpleSecurity.git
 cd SpringSimpleSecurity
 
-### The application will start on http://localhost:8080
+### The application will start on http://localhost:8089
