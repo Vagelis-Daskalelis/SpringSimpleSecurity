@@ -1,4 +1,4 @@
-package com.tasks.organizer.dao.request;
+package com.tasks.vagelis.dao.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

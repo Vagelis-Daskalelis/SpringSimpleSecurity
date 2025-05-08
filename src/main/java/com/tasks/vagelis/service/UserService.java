@@ -1,4 +1,4 @@
-package com.tasks.organizer.service;
+package com.tasks.vagelis.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 

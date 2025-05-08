@@ -1,9 +1,9 @@
-package com.tasks.organizer.config;
+package com.tasks.vagelis.config;
 
 import java.io.IOException;
 
-import com.tasks.organizer.service.JwtService;
-import com.tasks.organizer.service.UserService;
+import com.tasks.vagelis.service.JwtService;
+import com.tasks.vagelis.service.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

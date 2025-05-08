@@ -1,4 +1,4 @@
-package com.tasks.organizer;
+package com.tasks.vagelis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

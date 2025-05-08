@@ -1,4 +1,4 @@
-package com.tasks.organizer.entities;
+package com.tasks.vagelis.entities;
 
 public enum Role {
     USER,

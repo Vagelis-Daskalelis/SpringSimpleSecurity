@@ -1,6 +1,6 @@
-package com.tasks.organizer.service.impl;
+package com.tasks.vagelis.service.impl;
 
-import com.tasks.organizer.service.JwtService;
+import com.tasks.vagelis.service.JwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;

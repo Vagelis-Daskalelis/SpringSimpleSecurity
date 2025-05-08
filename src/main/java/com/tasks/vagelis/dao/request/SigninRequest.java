@@ -1,4 +1,4 @@
-package com.tasks.organizer.dao.response;
+package com.tasks.vagelis.dao.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class JwtAuthenticationResponse {
-    private String token;
+public class SigninRequest {
+    private String email;
+    private String password;
 }

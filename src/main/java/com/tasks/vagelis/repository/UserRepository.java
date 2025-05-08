@@ -1,7 +1,7 @@
-package com.tasks.organizer.repository;
+package com.tasks.vagelis.repository;
 
-import com.tasks.organizer.entities.Role;
-import com.tasks.organizer.entities.User;
+import com.tasks.vagelis.entities.Role;
+import com.tasks.vagelis.entities.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

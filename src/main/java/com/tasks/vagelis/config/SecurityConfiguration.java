@@ -1,7 +1,7 @@
-package com.tasks.organizer.config;
+package com.tasks.vagelis.config;
 
-import com.tasks.organizer.entities.Role;
-import com.tasks.organizer.service.UserService;
+import com.tasks.vagelis.entities.Role;
+import com.tasks.vagelis.service.UserService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

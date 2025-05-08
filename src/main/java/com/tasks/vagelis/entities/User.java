@@ -1,4 +1,4 @@
-package com.tasks.organizer.entities;
+package com.tasks.vagelis.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

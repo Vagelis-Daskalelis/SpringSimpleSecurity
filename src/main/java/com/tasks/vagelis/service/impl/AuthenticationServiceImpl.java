@@ -1,18 +1,17 @@
-package com.tasks.organizer.service.impl;
+package com.tasks.vagelis.service.impl;
 
-import com.tasks.organizer.dao.request.SignUpRequest;
-import com.tasks.organizer.dao.request.SigninRequest;
-import com.tasks.organizer.dao.response.JwtAuthenticationResponse;
-import com.tasks.organizer.entities.Role;
-import com.tasks.organizer.entities.User;
-import com.tasks.organizer.repository.UserRepository;
-import com.tasks.organizer.service.AuthenticationService;
-import com.tasks.organizer.service.JwtService;
+import com.tasks.vagelis.dao.request.SignUpRequest;
+import com.tasks.vagelis.dao.request.SigninRequest;
+import com.tasks.vagelis.dao.response.JwtAuthenticationResponse;
+import com.tasks.vagelis.entities.Role;
+import com.tasks.vagelis.entities.User;
+import com.tasks.vagelis.repository.UserRepository;
+import com.tasks.vagelis.service.AuthenticationService;
+import com.tasks.vagelis.service.JwtService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

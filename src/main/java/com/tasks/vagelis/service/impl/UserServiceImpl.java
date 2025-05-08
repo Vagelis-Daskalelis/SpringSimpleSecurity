@@ -1,7 +1,7 @@
-package com.tasks.organizer.service.impl;
+package com.tasks.vagelis.service.impl;
 
-import com.tasks.organizer.repository.UserRepository;
-import com.tasks.organizer.service.UserService;
+import com.tasks.vagelis.repository.UserRepository;
+import com.tasks.vagelis.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

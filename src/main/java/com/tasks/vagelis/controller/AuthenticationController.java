@@ -1,9 +1,9 @@
-package com.tasks.organizer.controller;
+package com.tasks.vagelis.controller;
 
-import com.tasks.organizer.dao.request.SignUpRequest;
-import com.tasks.organizer.dao.request.SigninRequest;
-import com.tasks.organizer.dao.response.JwtAuthenticationResponse;
-import com.tasks.organizer.service.AuthenticationService;
+import com.tasks.vagelis.dao.request.SignUpRequest;
+import com.tasks.vagelis.dao.request.SigninRequest;
+import com.tasks.vagelis.dao.response.JwtAuthenticationResponse;
+import com.tasks.vagelis.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
