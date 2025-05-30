@@ -48,8 +48,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    public User updateUser(UserUpdateRequest request, Long targetUserId) {
-        if (!targetUserId.equals(request.getId())){
+    public User updateUser(UserUpdateRequest request, Long targetUserId, Long currentUserId) {
+        if (!targetUserId.equals(currentUserId)) {
             throw new SecurityException("You are not authorized to update this user.");
         }
 
@@ -61,8 +61,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         targetUser.setEmail(request.getEmail());
         targetUser.setPassword(passwordEncoder.encode(request.getPassword()));
 
-        userRepository.save(targetUser);
-        return targetUser;
+        return userRepository.save(targetUser);
     }
 
 

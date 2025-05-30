@@ -11,5 +11,5 @@ public interface AuthenticationService {
 
     JwtAuthenticationResponse signin(SigninRequest request);
 
-    User updateUser(UserUpdateRequest request, Long targetUserId);
+    User updateUser(UserUpdateRequest request, Long targetUserId, Long currentUserId);
 }

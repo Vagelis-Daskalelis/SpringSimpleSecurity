@@ -35,10 +35,10 @@ public class AuthorizationController {
     public ResponseEntity<User> updateUser(@PathVariable Long id,
                                            @RequestBody UserUpdateRequest request,
                                            Authentication authentication) {
-        User currentUser = (User) authentication.getPrincipal(); // you can cast safely now
+        User currentUser = (User) authentication.getPrincipal();
         Long currentUserId = currentUser.getId();
 
-        User updatedUser = authenticationService.updateUser(request, id);
+        User updatedUser = authenticationService.updateUser(request, id, currentUserId);
         return ResponseEntity.ok(updatedUser);
     }
 }
