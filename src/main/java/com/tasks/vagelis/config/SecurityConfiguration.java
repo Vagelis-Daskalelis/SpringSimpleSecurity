@@ -41,6 +41,7 @@ public class SecurityConfiguration {
                              ).permitAll()
                             .requestMatchers("/api/v1/auth/**").permitAll()
                             .requestMatchers("/api/v1/resource/user").hasAuthority(Role.USER.name())
+                             .requestMatchers( HttpMethod.PUT,"/api/v1/resource/user/update/{id}").hasAnyAuthority(Role.USER.name())
                             .requestMatchers("/api/v1/**").hasAuthority(Role.ADMIN.name())
                             .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

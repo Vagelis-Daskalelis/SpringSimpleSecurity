@@ -2,6 +2,7 @@ package com.tasks.vagelis.service.impl;
 
 import com.tasks.vagelis.dao.request.SignUpRequest;
 import com.tasks.vagelis.dao.request.SigninRequest;
+import com.tasks.vagelis.dao.request.UserUpdateRequest;
 import com.tasks.vagelis.dao.response.JwtAuthenticationResponse;
 import com.tasks.vagelis.entities.Role;
 import com.tasks.vagelis.entities.User;
@@ -44,6 +45,24 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
         var jwt = jwtService.generateToken(user);
         return JwtAuthenticationResponse.builder().token(jwt).build();
+    }
+
+    @Override
+    public User updateUser(UserUpdateRequest request, Long targetUserId) {
+        if (!targetUserId.equals(request.getId())){
+            throw new SecurityException("You are not authorized to update this user.");
+        }
+
+        User targetUser = userRepository.findById(targetUserId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        targetUser.setFirstName(request.getFirstName());
+        targetUser.setLastName(request.getLastName());
+        targetUser.setEmail(request.getEmail());
+        targetUser.setPassword(passwordEncoder.encode(request.getPassword()));
+
+        userRepository.save(targetUser);
+        return targetUser;
     }
 
 
